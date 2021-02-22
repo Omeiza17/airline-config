@@ -1,0 +1,28 @@
+server:
+  port: 9090
+
+spring:
+  devtools:
+    livereload:
+      port: 35731
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+logging:
+  level:
+    org.springframework: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - metrics
+          - prometheus
