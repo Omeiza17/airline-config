@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+spring:
+  devtools:
+    livereload:
+      port: 35733
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  data:
+    mongodb:
+      database: airline
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+logging:
+  level:
+    org.springframework: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - env
+          - metrics
+          - prometheus
