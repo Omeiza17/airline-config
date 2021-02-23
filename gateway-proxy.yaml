@@ -6,6 +6,17 @@ spring:
     livereload:
       port: 35731
   cloud:
+    gateway:
+      routes:
+        - id: planes
+          uri: lb://planes
+          predicates:
+            - Path=/planes/**
+          filters:
+            - StripPrefix=1
+            - name: Retry
+              args:
+                retries: 3
     loadbalancer:
       ribbon:
         enabled: false
