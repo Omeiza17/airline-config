@@ -9,6 +9,9 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+  data:
+    mongodb:
+      database: airline
 
 eureka:
   client:
